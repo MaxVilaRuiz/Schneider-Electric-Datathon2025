@@ -1,0 +1,110 @@
+# SYSTEM
+
+# System folders
+.DS_Store
+Thumbs.db
+
+# Temporal files
+*.tmp
+*.log
+*.swp
+*.swo
+
+# Virtual enviroments
+venv/
+.env/
+.env.*
+
+
+
+# BACKEND
+
+# Python compilations
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual enviroments
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Distributions / Builds
+dist/
+build/
+
+# Enviroment config
+backend/.env
+backend/env/
+backend/*.env
+
+
+
+# ML
+
+# Private data
+# ml/data/
+# ml/data/*
+
+# Notebooks checkpoints
+ml/notebooks/.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Jupyter cache files
+.ipynb_checkpoints
+
+# Temportal libraries of ML
+*.cache
+*.npz
+*.npy
+*.h5
+*.pkl
+*.pt
+
+
+
+# FRONTEND
+
+# Node dependencies
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+frontend/.cache/
+
+# Production build
+frontend/out/
+frontend/build/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Sensitive configs
+frontend/.env
+frontend/.env.*
+frontend/*.local
+
+
+
+# IDEs
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+
+
+# MISC
+
+# General cache
+cache/
+tmp/
+*.sqlite3
+*.db
+
+# Private config files
+secret.json
+secrets.*.json
+*.pem
