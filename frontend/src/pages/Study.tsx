@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AttributeSelector from "@/components/AttributeSelector";
+import AttributeBool from "@/components/AttributeBool";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight } from "lucide-react";
 
@@ -22,7 +23,8 @@ const Study = () => {
     "Time opened",
     "Competitor Z",
     "Comptetitor X",
-    "Comptetitor Y"
+    "Comptetitor Y",
+    "Customer in Iberia"
   ]
   const handleSubmit = () => {
     // Aquí se enviarán los datos al backend
@@ -56,7 +58,7 @@ const Study = () => {
 
       {/* Main content area */}
       <main className="max-w-6xl mx-auto mt-12 px-6 pb-20 relative">
-        <section className="bg-white/10 supports-backdrop-blur:bg-white/5 rounded-2xl p-8 shadow-2xl border border-white/20 space-y-8 will-change-contents">
+        <section className="bg-white/20 supports-backdrop-blur:bg-white/5 rounded-2xl p-8 shadow-2xl border border-white/20 space-y-8 will-change-contents">
 
           {/* Title inside form */}
           <div className="text-center space-y-2">
@@ -68,7 +70,7 @@ const Study = () => {
 
           {/* Grid fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in">
-            {[...Array(15)].map((_, idx) => (
+            {[...Array(12)].map((_, idx) => (
               <div key={idx}>
                 <AttributeSelector
                   attributeNumber={idx + 1}
@@ -81,7 +83,30 @@ const Study = () => {
                   }}
                 />
               </div>
-            ))}
+            ))
+            }
+            {[...Array(4)].map((_, idz) => (
+
+              <div key = {idz}>
+                <AttributeBool
+
+                  attributeNumber={idz + 13}
+                  attributeName={names[idz+12]}
+                  defaultValue={0}
+                  onChange={(value) => {
+                    const newAttributes = [...attributes];
+                    newAttributes[idz] = value;
+                    setAttributes(newAttributes);
+                  }}
+                />
+
+
+              </div>
+
+            ))
+            
+            }
+
           </div>
 
           {/* Submit */}

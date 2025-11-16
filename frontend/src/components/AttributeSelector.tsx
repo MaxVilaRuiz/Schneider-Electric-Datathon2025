@@ -21,13 +21,15 @@ const AttributeSelector = ({
   step = 0.1,
   defaultValue = 50,
   onChange
-}: AttributeSelectorProps) => {
-  const [value, setValue] = useState<number>(defaultValue);
+}: 
 
-  const handleSliderChange = (newValue: number[]) => {
-    setValue(newValue[0]);
-    onChange?.(newValue[0]);
-  };
+  AttributeSelectorProps) => {
+    const [value, setValue] = useState<number>(defaultValue);
+
+    const handleSliderChange = (newValue: number[]) => {
+      setValue(newValue[0]);
+      onChange?.(newValue[0]);
+    };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = parseFloat(e.target.value);
@@ -42,7 +44,7 @@ const AttributeSelector = ({
     <Card 
       className="
         p-6 
-        bg-white/5 
+        bg-white/10
         backdrop-blur-lg 
         border border-white/10
         hover:border-[#87D300]/40 
