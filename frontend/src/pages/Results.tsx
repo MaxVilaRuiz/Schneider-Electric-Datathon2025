@@ -107,7 +107,7 @@ const Results = () => {
             </CardHeader>
 
             <CardContent className="p-0">
-              <ScrollArea className="h-auto px-4 py-4">
+              <ScrollArea className="max-h-screen overflow-y-auto px-4 py-4">
                 <div className="space-y-6">
 
                   {/* Mensaje IA */}
@@ -142,7 +142,7 @@ const Results = () => {
             </CardContent>
           </Card>
 
-          {/* Gráficos */}
+          {/* Graphics */}
           <div className="space-y-6 animate-fade-in">
           <Card className="
             bg-white/5 
