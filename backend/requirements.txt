@@ -8,3 +8,4 @@ shap
 tensorflow
 pandas
 haystack-ai
+ollama-haystack
