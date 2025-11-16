@@ -49,7 +49,10 @@ def dummy_explain():
     row = row.drop(columns=["id"])
     y_hat = model.predict(row)
     y_hat = [0 if val < threshold else 1 for val in y_hat]
-    #shap_result = explain_row(row, X)
+    shap_result = explain_row(row, X)
+
+    process_w_llm()
+
     return {"message": y_hat, "id": id}
 
 def explain_row(input_df: pd.DataFrame, Xbackground: pd.DataFrame):
@@ -64,3 +67,6 @@ def explain_row(input_df: pd.DataFrame, Xbackground: pd.DataFrame):
         "prediction": float(model.predict(input_df)[0][0]),
     }
     return shap_result
+
+def process_w_llm(shap_result):
+    return

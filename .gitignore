@@ -58,7 +58,6 @@ ml/notebooks/.ipynb_checkpoints/
 *.cache
 *.npz
 *.npy
-*.h5
 *.pkl
 *.pt
 
