@@ -76,31 +76,97 @@ const Results = () => {
       <main className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Explicación */}
-          <Card className="lg:col-span-1 border-2 border-primary/20 shadow-xl animate-fade-in">
-            <CardHeader className="bg-gradient-to-r from-primary/10 to-accent/10">
-              <CardTitle className="text-primary">Análisis de Atributos</CardTitle>
+          <Card className="
+            lg:col-span-1 
+            bg-white/5 
+            backdrop-blur-lg 
+            border border-white/15 
+            rounded-2xl 
+            shadow-xl 
+            animate-fade-in
+          ">
+            <CardHeader className="
+              bg-white/5 
+              backdrop-blur-md 
+              border-b border-white/10 
+              rounded-t-2xl
+            ">
+              <CardTitle className="text-white font-semibold tracking-wide flex items-center gap-2">
+                <Sparkles className="text-[#87D300]" size={22} />
+                AI Analysis
+              </CardTitle>
             </CardHeader>
-            <CardContent className="p-6">
-              <ScrollArea className="h-[400px]">
-                <div className="space-y-4 text-foreground">
-                  <p className="text-lg font-semibold">
-                    Resultados del Análisis
-                  </p>
-                  <p>
-                    Basado en los atributos seleccionados, se ha generado un análisis 
-                    detallado de tu perfil de aprendizaje.
-                  </p>
-                  <p>
-                    Los gráficos muestran una comparativa entre tus valores actuales 
-                    y los objetivos recomendados para optimizar tu experiencia de estudio.
-                  </p>
-                  <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
-                    <p className="font-medium text-primary mb-2">Nota:</p>
-                    <p className="text-sm">
-                      Los datos mostrados son simulados. Una vez conectado el backend, 
-                      estos valores se actualizarán automáticamente con tu información real.
+
+            <CardContent className="p-0">
+              <ScrollArea className="h-[400px] px-4 py-4">
+                <div className="space-y-6">
+
+                  {/* Mensaje IA */}
+                  <div className="flex items-start gap-3">
+                    <div className="
+                      w-9 h-9 
+                      rounded-full 
+                      bg-gradient-to-br from-[#009530] to-[#87D300] 
+                      flex items-center justify-center 
+                      text-black font-bold
+                    ">
+                      AI
+                    </div>
+                    <div className="
+                      bg-white/10 
+                      backdrop-blur-md 
+                      px-4 py-3 
+                      rounded-xl 
+                      border border-white/10
+                      text-white 
+                      shadow-lg
+                      leading-relaxed
+                      max-w-[85%]
+                    ">
+                      Basado en los atributos seleccionados, he generado un análisis detallado del potencial de la oportunidad.
+                    </div>
+                  </div>
+
+                  {/* Mensaje IA */}
+                  <div className="flex items-start gap-3">
+                    <div className="
+                      w-9 h-9 
+                      rounded-full 
+                      bg-gradient-to-br from-[#009530] to-[#87D300] 
+                      flex items-center justify-center 
+                      text-black font-bold
+                    ">
+                      AI
+                    </div>
+                    <div className="
+                      bg-white/10 
+                      backdrop-blur-md 
+                      px-4 py-3 
+                      rounded-xl 
+                      border border-white/10
+                      text-white 
+                      shadow-lg
+                      leading-relaxed
+                      max-w-[85%]
+                    ">
+                      Los gráficos comparan el rendimiento actual con los valores recomendados, permitiéndote identificar áreas clave de mejora.
+                    </div>
+                  </div>
+
+                  {/* Mensaje Nota */}
+                  <div className="
+                    bg-white/5 
+                    rounded-xl 
+                    border border-white/10 
+                    p-4 
+                    shadow-inner
+                  ">
+                    <p className="text-[#87D300] font-medium mb-1">Nota</p>
+                    <p className="text-white/80 text-sm">
+                      Los datos mostrados son simulados. Una vez conectado el backend, la IA generará una explicación completamente personalizada.
                     </p>
                   </div>
+
                 </div>
               </ScrollArea>
             </CardContent>
@@ -108,9 +174,23 @@ const Results = () => {
 
           {/* Gráficos */}
           <div className="space-y-6 animate-fade-in">
-            <Card className="border-2 border-primary/20 shadow-xl">
-              <CardHeader className="bg-gradient-to-r from-accent/10 to-primary/10">
-                <CardTitle className="text-primary">Gráfico de Barras</CardTitle>
+          <Card className="
+            bg-white/5 
+            backdrop-blur-lg
+            border border-white/15 
+            rounded-2xl 
+            shadow-xl 
+            transition-all 
+            hover:shadow-2xl 
+            hover:bg-white/10
+          ">
+          <CardHeader className="
+            bg-white/5 
+            border-b border-white/10 
+            backdrop-blur-md 
+            rounded-t-2xl
+          ">
+            <CardTitle className="text-white font-semibold tracking-wide">Gráfico de Barras</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <ResponsiveContainer width="100%" height={250}>
@@ -133,9 +213,23 @@ const Results = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-primary/20 shadow-xl">
-              <CardHeader className="bg-gradient-to-r from-primary/10 to-accent/10">
-                <CardTitle className="text-primary">Gráfico de Líneas</CardTitle>
+            <Card className="
+              bg-white/5 
+              backdrop-blur-lg
+              border border-white/15 
+              rounded-2xl 
+              shadow-xl 
+              transition-all 
+              hover:shadow-2xl 
+              hover:bg-white/10
+            ">
+              <CardHeader className="
+                bg-white/5 
+                border-b border-white/10 
+                backdrop-blur-md 
+                rounded-t-2xl
+              ">
+                <CardTitle className="text-white font-semibold tracking-wide">Gráfico de Líneas</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <ResponsiveContainer width="100%" height={250}>
