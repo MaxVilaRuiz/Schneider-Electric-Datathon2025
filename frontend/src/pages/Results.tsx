@@ -4,6 +4,8 @@ import { Sparkles, ArrowLeft } from "lucide-react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 // Datos simulados para los gráficos
@@ -19,29 +21,55 @@ const Results = () => {
   const chartData = generateRandomData();
   const navigate = useNavigate();
 
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-accent/30">
+    <div className="min-h-screen bg-gradient-to-br from-[#002e0f] via-[#00551b] to-[#009530] text-white relative overflow-hidden">
       {/* Header */}
-      <header className="bg-gradient-to-r from-primary via-primary/95 to-accent h-16 flex items-center justify-center shadow-lg relative overflow-hidden">
-        
-        {/* Botón de volver */}
-        <div className="absolute left-5 top-1/2 transform -translate-y-1/2 z-30">
-          <Button variant="outline" size="sm" onClick={() => navigate(-1)}>
-            <ArrowLeft className="mr-1" />
+      <header className="
+        sticky top-0 z-50 
+        bg-gradient-to-r from-[#002e0f]/70 via-[#00551b]/60 to-[#009530]/50
+        backdrop-blur-xl 
+        shadow-xl
+        border-b border-white/10 
+      ">
+
+        {/* Fade inferior */}
+        <div className="
+          absolute bottom-0 left-0 right-0 
+          h-10 
+          bg-gradient-to-b 
+          from-transparent 
+          to-[#002e0f]/0
+          pointer-events-none
+        " />
+
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative z-10">
+
+          {/* Button on left */}
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => navigate("/study")}
+            className="flex items-center gap-1 bg-white/20 text-white hover:bg-white/10 hover:text-white"
+          >
+            <ArrowLeft size={16} />
             Return
           </Button>
-        </div>
 
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-32 h-32 bg-primary-foreground rounded-full blur-2xl" />
-          <div className="absolute top-0 right-1/4 w-32 h-32 bg-primary-foreground rounded-full blur-2xl" />
-        </div>
-        <div className="relative flex items-center gap-3">
-          <Sparkles className="text-primary-foreground" size={28} />
-          <h1 className="text-3xl font-bold text-primary-foreground tracking-wide">
-            Resultados
+          {/* Title on right */}
+          <h1 className="
+            text-3xl font-bold 
+            tracking-tight 
+            text-white 
+            drop-shadow-[0_2px_4px_rgba(0,0,0,0.25)]
+          ">
+            Results
           </h1>
-          <Sparkles className="text-primary-foreground" size={28} />
+
         </div>
       </header>
 
@@ -79,7 +107,7 @@ const Results = () => {
           </Card>
 
           {/* Gráficos */}
-          <div className="space-y-6 animate-fade-in" style={{ animationDelay: "100ms" }}>
+          <div className="space-y-6 animate-fade-in">
             <Card className="border-2 border-primary/20 shadow-xl">
               <CardHeader className="bg-gradient-to-r from-accent/10 to-primary/10">
                 <CardTitle className="text-primary">Gráfico de Barras</CardTitle>
