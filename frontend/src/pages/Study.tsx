@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AttributeSelector from "@/components/AttributeSelector";
-import AttributeBool from "@/components/AttributeBool";
+import AttributeBoolean from "@/components/AttributeBoolean";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight } from "lucide-react";
 
@@ -45,6 +45,26 @@ const Study = () => {
       console.error("Error sending data: ", error);
     }
   };
+
+  const descriptions = [
+    "Historical sales of Product A with the costumer concerned",
+    "Historical sales of Product B with the costumer concerned",
+    "INdicates if Product A was recommended in the past to the costumer",
+    "Amount we are trying to sell of product A",
+    "Amount we are trying to sell of product B",
+    "Amount we are trying to sell of product C",
+    "Amount we are trying to sell of product D",
+    "Customer succes rate in previous interactions",
+    "Number of iteractions with the costumer",
+    "Month when the opportunity was created",
+    "Indicates if the opportunity has been opened for a long time",
+    "Pressence of competitor Z in the opportunity",
+    "Pressence of competitor X in the opportunity",
+    "CPressence of competitor Y in the opportunity",
+    "Competidor X presente",
+    "Competidor Y presente",
+    "A binary variable indicating whether the customer is located in the Iberian Peninsula"
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#009530] via-[#00551b] to-[#002e0f] text-white relative overflow-hidden">
@@ -90,6 +110,7 @@ const Study = () => {
                   attributeNumber={idx + 1}
                   attributeName={names[idx]}
                   defaultValue={attributes[idx]}
+                  description={descriptions[idx]}
                   onChange={(value) => {
                     const newAttributes = [...attributes];
                     newAttributes[idx] = value;
@@ -101,10 +122,11 @@ const Study = () => {
             }
             {[...Array(4)].map((_, idz) => (
               <div key = {idz}>
-                <AttributeBool
+                <AttributeBoolean
                   attributeNumber={idz + 13}
                   attributeName={names[idz + 12]}
                   defaultValue={attributes[idz + 12]}
+                  description={descriptions[idz + 12]}
                   onChange={(value) => {
                     const newAttributes = [...attributes];
                     newAttributes[idz + 12] = value;
