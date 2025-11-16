@@ -23,7 +23,7 @@ const AttributeSelector = ({
   maxValue = 100, 
   step = 0.1,
   defaultValue = 50,
-  description = "que miras friki",
+  description = "",
   onChange
 }: 
 
@@ -55,6 +55,7 @@ const AttributeSelector = ({
         rounded-xl
         shadow-lg hover:shadow-xl
         transition-colors duration-300
+        space-y-3
       "
     >
        <div className="flex items-center justify-between">
@@ -76,7 +77,7 @@ const AttributeSelector = ({
       </div>
           
       <div className="space-y-4">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <Input
             type="number"
             value={value.toFixed(1)}

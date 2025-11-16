@@ -16,7 +16,7 @@ const Study = () => {
     "C product",
     "D product",
     "Hit rate",
-    "Iterations",
+    "Interactions",
     "Contracts",
     "Initial month",
     "Time opened",
@@ -48,20 +48,18 @@ const Study = () => {
   const descriptions = [
     "Historical sales of Product A with the customer concerned",
     "Historical sales of Product B with the customer concerned",
-    "INdicates if Product A was recommended in the past to the customer",
+    "Indicates if Product A was recommended in the past to the customer",
     "Amount we are trying to sell of product A",
-    "Amount we are trying to sell of product B",
     "Amount we are trying to sell of product C",
     "Amount we are trying to sell of product D",
     "Customer succes rate in previous interactions",
-    "Number of iteractions with the customer",
+    "Number of interactions with the customer",
+    "Number of contracts signed with the customer",
     "Month when the opportunity was created",
     "Indicates if the opportunity has been opened for a long time",
     "Pressence of competitor Z in the opportunity",
     "Pressence of competitor X in the opportunity",
-    "CPressence of competitor Y in the opportunity",
-    "Competidor X presente",
-    "Competidor Y presente",
+    "Pressence of competitor Y in the opportunity",
     "A binary variable indicating whether the customer is located in the Iberian Peninsula"
   ];
 
@@ -80,11 +78,11 @@ const Study = () => {
           flex items-center justify-between
         ">
           <h1 className="
-            text-3xl font-bold 
+            text-4xl font-bold 
             tracking-tight 
             text-white drop-shadow-sm
           ">
-            Opportunity Study Form
+            Customer Input Form
           </h1>
         </div>
       </header>
@@ -95,9 +93,8 @@ const Study = () => {
 
           {/* Title inside form */}
           <div className="text-center space-y-2">
-            <h2 className="text-2xl font-semibold text-white">Fill in the opportunity attributes</h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-sm">
-              Provide the data for this opportunity. These attributes will be used to predict win/loss probability.
+            <p className="text-white/90 max-w-5xl mx-lg text-2xl">
+              Please provide values for all requested parameters.           
             </p>
           </div>
 

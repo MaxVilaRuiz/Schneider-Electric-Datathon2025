@@ -160,7 +160,7 @@ const Results = () => {
             backdrop-blur-md 
             rounded-t-2xl
           ">
-            <CardTitle className="text-white font-semibold tracking-wide">Gráfico de Barras</CardTitle>
+            <CardTitle className="text-white font-semibold tracking-wide">Bar Graph</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <ResponsiveContainer width="100%" height={250}>
@@ -177,7 +177,7 @@ const Results = () => {
                     />
                     <Legend />
                     <Bar dataKey="value" fill="hsl(var(--primary))" name="Actual" />
-                    <Bar dataKey="target" fill="hsl(var(--accent))" name="Objetivo" />
+                    <Bar dataKey="target" fill="hsl(var(--accent))" name="Objective" />
                   </BarChart>
                 </ResponsiveContainer>
               </CardContent>
@@ -199,7 +199,7 @@ const Results = () => {
                 backdrop-blur-md 
                 rounded-t-2xl
               ">
-                <CardTitle className="text-white font-semibold tracking-wide">Gráfico de Líneas</CardTitle>
+                <CardTitle className="text-white font-semibold tracking-wide">Line Graph</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <ResponsiveContainer width="100%" height={250}>
@@ -216,7 +216,7 @@ const Results = () => {
                     />
                     <Legend />
                     <Line type="monotone" dataKey="value" stroke="hsl(var(--primary))" strokeWidth={3} name="Actual" />
-                    <Line type="monotone" dataKey="target" stroke="hsl(var(--accent))" strokeWidth={3} name="Objetivo" />
+                    <Line type="monotone" dataKey="target" stroke="hsl(var(--accent))" strokeWidth={3} name="Objective" />
                   </LineChart>
                 </ResponsiveContainer>
               </CardContent>
