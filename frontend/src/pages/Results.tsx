@@ -98,17 +98,17 @@ const Results = () => {
             </CardHeader>
 
             <CardContent className="p-0">
-              <ScrollArea className="h-[400px] px-4 py-4">
+              <ScrollArea className="h-auto px-4 py-4">
                 <div className="space-y-6">
 
                   {/* Mensaje IA */}
                   <div className="flex items-start gap-3">
                     <div className="
-                      w-9 h-9 
+                      w-7 h-7 sm:w-9 sm:h-9 
                       rounded-full 
                       bg-gradient-to-br from-[#009530] to-[#87D300] 
                       flex items-center justify-center 
-                      text-black font-bold
+                      text-black text-sm sm:text-base font-bold
                     ">
                       AI
                     </div>
@@ -130,14 +130,14 @@ const Results = () => {
                   {/* Mensaje IA */}
                   <div className="flex items-start gap-3">
                     <div className="
-                      w-9 h-9 
-                      rounded-full 
-                      bg-gradient-to-br from-[#009530] to-[#87D300] 
-                      flex items-center justify-center 
-                      text-black font-bold
-                    ">
-                      AI
-                    </div>
+                        w-7 h-7 sm:w-9 sm:h-9 
+                        rounded-full 
+                        bg-gradient-to-br from-[#009530] to-[#87D300] 
+                        flex items-center justify-center 
+                        text-black text-sm sm:text-base font-bold
+                      ">
+                        AI
+                      </div>
                     <div className="
                       bg-white/10 
                       backdrop-blur-md 
