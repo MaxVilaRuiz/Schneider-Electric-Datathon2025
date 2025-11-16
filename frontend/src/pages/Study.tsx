@@ -7,13 +7,12 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 const Study = () => {
   const navigate = useNavigate();
-  const [attributes, setAttributes] = useState([50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 0, 0, 0, 0]);
+  const [attributes, setAttributes] = useState([50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 0, 0, 0, 0]);
   const names = [
     "Product A sold in the past",
     "Product B sold in the past",
     "A recomendations",
     "A product",
-    "B product",
     "C product",
     "D product",
     "Hit rate",
@@ -104,7 +103,7 @@ const Study = () => {
 
           {/* Grid fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in">
-            {[...Array(12)].map((_, idx) => (
+            {[...Array(11)].map((_, idx) => (
               <div key={idx}>
                 <AttributeSelector
                   attributeNumber={idx + 1}
@@ -123,13 +122,13 @@ const Study = () => {
             {[...Array(4)].map((_, idz) => (
               <div key = {idz}>
                 <AttributeBoolean
-                  attributeNumber={idz + 13}
-                  attributeName={names[idz + 12]}
-                  defaultValue={attributes[idz + 12]}
-                  description={descriptions[idz + 12]}
+                  attributeNumber={idz + 12}
+                  attributeName={names[idz + 11]}
+                  defaultValue={attributes[idz + 11]}
+                  description={descriptions[idz + 11]}
                   onChange={(value) => {
                     const newAttributes = [...attributes];
-                    newAttributes[idz + 12] = value;
+                    newAttributes[idz + 11] = value;
                     setAttributes(newAttributes);
                   }}
                 />
