@@ -26,10 +26,24 @@ const Study = () => {
     "Comptetitor Y",
     "Customer in Iberia"
   ]
-  const handleSubmit = () => {
-    // Aquí se enviarán los datos al backend
-    console.log("Atributos enviados:", attributes);
-    navigate("/results");
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/v1/predict", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({attributes}),
+      });
+
+      const result = await response.json();
+      console.log("Backend answer: ", result);
+
+      navigate("/results");
+    }
+    catch (error) {
+      console.error("Error sending data: ", error);
+    }
   };
 
   return (

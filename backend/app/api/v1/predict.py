@@ -1,11 +1,17 @@
 from fastapi import APIRouter
 from app.schemas.predict_schema import PredictRequest, PredictResponse
 from app.models.model_loader import model
+from pydantic import BaseModel
+from typing import List
 
 router = APIRouter()
 
-@router.post("/", response_model=PredictResponse)
-def predict_endpoint(payload: PredictRequest):
+class PredictInput(BaseModel):
+    attributes: List[float]
+
+@router.post("/")
+async def predict_values(data: PredictInput):
+    print("Received: ", data.attributes)
     # Here we call the model, these are simulated data
     # TODO: delete before commit
     prediction = 1
