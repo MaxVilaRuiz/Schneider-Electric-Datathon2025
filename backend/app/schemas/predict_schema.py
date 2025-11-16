@@ -18,5 +18,4 @@ class PredictRequest(BaseModel):
     competitor_Z: bool
 
 class PredictResponse(BaseModel):
-    prediction: int
-    probability: float
+    summary: list[str]
