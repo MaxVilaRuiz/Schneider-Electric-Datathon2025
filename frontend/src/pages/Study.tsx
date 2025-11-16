@@ -33,14 +33,24 @@ const Study = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#009530] via-[#00551b] to-[#002e0f] text-white relative overflow-hidden">
       {/* Header with colored bar and decorative elements */}
-      <header className="w-full border-b border-white/10 backdrop-blur-xl bg-[#002e0f]/60 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          
-          <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-[#87D300] to-white bg-clip-text text-transparent">
+      <header className="
+        sticky top-0 z-50 
+        bg-gradient-to-r from-[#002e0f]/70 via-[#00551b]/60 to-[#009530]/50
+        backdrop-blur-xl 
+        border-b border-white/10
+        shadow-xl
+      ">
+        <div className="
+          max-w-6xl mx-auto px-6 py-4 
+          flex items-center justify-between
+        ">
+          <h1 className="
+            text-3xl font-bold 
+            tracking-tight 
+            text-white drop-shadow-sm
+          ">
             Opportunity Study Form
           </h1>
-
-          <Sparkles className="text-[#87D300]" size={28} />
         </div>
       </header>
 
