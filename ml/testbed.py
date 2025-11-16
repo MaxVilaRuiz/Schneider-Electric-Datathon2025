@@ -16,7 +16,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
 
 from tensorflow.keras.models import load_model
 
-model = load_model('models/SchneiderNNModel2000.h5')
+model = load_model('models/SchneiderNNModel.h5')
 y_hat = model.predict(X_test)
 
 from sklearn.metrics import accuracy_score

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from app.schemas.explain_schema import ExplainResponse
-from app.models.model_loader import model
+from app.models.model_loader import model, threshold
 
 # ---- TEST ----
 import pandas as pd
@@ -48,7 +48,7 @@ def dummy_explain():
     id = int(row["id"])
     row = row.drop(columns=["id"])
     y_hat = model.predict(row)
-    y_hat = [0 if val < 0.5 else 1 for val in y_hat]
+    y_hat = [0 if val < threshold else 1 for val in y_hat]
     #shap_result = explain_row(row, X)
     return {"message": y_hat, "id": id}
 
