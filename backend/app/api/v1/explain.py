@@ -9,6 +9,8 @@ from pathlib import Path
 import numpy as np
 import shap
 from sklearn.metrics import f1_score
+import haystack
+from haystack_integrations.components.generators.ollama import OllamaGenerator
 
 def calculate_threshold(y_hat, Y_test):
     thresholds = np.linspace(0, 1, 101)
@@ -49,9 +51,12 @@ def dummy_explain():
     row = row.drop(columns=["id"])
     y_hat = model.predict(row)
     y_hat = [0 if val < threshold else 1 for val in y_hat]
+    X = X.drop(columns=["id"])
     shap_result = explain_row(row, X)
 
-    process_w_llm()
+    # This function calls an llm using ollama and processes the SHAP data
+    # do not run unless you want to download 1GB smallm on your computer
+    #process_w_llm(shap_result)
 
     return {"message": y_hat, "id": id}
 
@@ -69,4 +74,23 @@ def explain_row(input_df: pd.DataFrame, Xbackground: pd.DataFrame):
     return shap_result
 
 def process_w_llm(shap_result):
+    shap_text = f"""
+    I have a binary classification prediction model and these are the SHAP results for a row of feature data:
+
+    - Prediction of the model: {shap_result['prediction']:.3f}
+    - Base value: {shap_result['base_value']:.3f}
+    - Feature relevance: """
+    for f, v in zip(shap_result["features"], shap_result["values"]):
+        shap_text += f"    {f}: {v}\n"
+
+    shap_text += """
+    Explain in a simple and as non technical way what the prediction means, which features had more influence and to which
+    direction and why the model took that decision overall.
+    """
+    print(shap_text)
+
+    generator = OllamaGenerator(model="smollm2:1.7b", url="http://localhost:11434")
+    result = generator.run( shap_text )
+    #summary = result['answers'][0].answer if result['answers'] else "LLM couldn't summarize."
+    print(result["replies"])
     return
