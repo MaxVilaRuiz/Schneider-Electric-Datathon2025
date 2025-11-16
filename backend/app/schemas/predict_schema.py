@@ -19,3 +19,7 @@ class PredictRequest(BaseModel):
 
 class PredictResponse(BaseModel):
     summary: list[str]
+    features: list[int]
+    values: list[list[float]]
+    base_value: float
+    prediction: float
