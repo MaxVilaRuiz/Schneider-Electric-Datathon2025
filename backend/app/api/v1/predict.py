@@ -83,6 +83,22 @@ def process_w_llm(shap_result):
     shap_text += """
     Explain in a simple and as non technical way what the prediction means, which features had more influence and to which
     direction and why the model took that decision overall. Try to be breif and you don't need to do an introduction to the data.
+    Keep in mind that the names of the features depending on their index are: 
+    1: Product A sold in the past,
+    2: Product B sold in the past,
+    3: A recomendations,
+    4: A product,
+    5: C product,
+    6: D product,
+    7: Hit rate,
+    8: Interactions,
+    9: Contracts,
+    10: Initial month,
+    11: Time opened,
+    12: Competitor Z,
+    13: Comptetitor X,
+    14: Comptetitor Y,
+    15: Customer in Iberia.
     """
     print(shap_text)
 
