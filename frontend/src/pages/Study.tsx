@@ -7,7 +7,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 const Study = () => {
   const navigate = useNavigate();
-  const [attributes, setAttributes] = useState([50, 75, 25, 60, 90]);
+  const [attributes, setAttributes] = useState([50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 0, 0, 0, 0]);
   const names = [
     "Product A sold in the past",
     "Product B sold in the past",
@@ -86,21 +86,17 @@ const Study = () => {
             ))
             }
             {[...Array(4)].map((_, idz) => (
-
               <div key = {idz}>
                 <AttributeBool
-
                   attributeNumber={idz + 13}
-                  attributeName={names[idz+12]}
-                  defaultValue={0}
+                  attributeName={names[idz + 12]}
+                  defaultValue={attributes[idz + 12]}
                   onChange={(value) => {
                     const newAttributes = [...attributes];
-                    newAttributes[idz] = value;
+                    newAttributes[idz + 12] = value;
                     setAttributes(newAttributes);
                   }}
                 />
-
-
               </div>
 
             ))
